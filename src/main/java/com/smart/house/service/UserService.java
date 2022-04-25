@@ -44,8 +44,6 @@ public class UserService {
 
     public void registration() {
 
-
-
         final User user = new User();
 
 

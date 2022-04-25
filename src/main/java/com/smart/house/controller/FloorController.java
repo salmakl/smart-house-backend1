@@ -25,10 +25,7 @@ public class FloorController {
         return floorService.addFloor(floor);
     }
 
-    @PutMapping("/floor/{id}")
-    public Floor updateFloor(@PathVariable String id, @RequestBody Floor floor) {
-        return floorService.updateFloor(id,floor);
-    }
+
 
     @DeleteMapping("/floor/{id}")
     public void deleteFloor(@PathVariable String id){
