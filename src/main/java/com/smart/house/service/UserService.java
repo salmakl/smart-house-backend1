@@ -42,26 +42,7 @@ public class UserService {
     }
 
 
-    public void registration() {
-
-        final User user = new User();
-
-
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRoles(Collections.singleton(ERole.ROLE_USER));
-
-        userRepository.save(user);
-
-        final String username = user.getUsername();
-
-        log.info("{} registered successfully!", username);
-
-    }
-
-
-    public Optional<User> findAuthenticatedUserByUsername(String username) {
-
-        return findByUsername(username);
-
+    public User addUser(User user){
+        return userRepository.save(user);
     }
 }

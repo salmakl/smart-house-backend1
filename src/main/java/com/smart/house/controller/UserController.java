@@ -16,6 +16,11 @@ public class UserController {
         this.passwordEncoder = passwordEncoder;
         this.userService = userService;
     }
+    @PostMapping("/register")
+    public User register(@RequestBody User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        return userService.addUser(user);
+    }
 
 
 }
