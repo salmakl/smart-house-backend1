@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+
 public class UserController {
     private final PasswordEncoder passwordEncoder;
     private final UserService userService;
@@ -16,9 +17,5 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("/register")
-    public User register(@RequestBody User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        return userService.addUser(user);
-    }
+
 }
